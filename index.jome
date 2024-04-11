@@ -1,1 +1,33 @@
-#log "Hello world!"
+import build : './src/build.jome'
+import server : './src/server.jome'
+
+// const build = #(./build.jome)
+// const server = #(./server.jome)
+// build := #(./build.jome)
+// server := #(./server.jome)
+
+with cmd, args end
+
+global.ROOT = '/cuisine'
+
+if (cmd === 'test')
+  #log "No test suite written yet."
+elsif (cmd === 'dev')
+  //#(./build.jome, :force!)
+  //#(./server.jome, port: 3000)
+  build :force!
+  server port: 3000
+elsif (cmd === 's' || cmd === 'server')
+  build()
+  server port: 3000
+else
+  #log <text>
+    Pascal Cuisine
+
+    Usage:
+    jome # get this help message
+    jome dev # build and start server
+    jome s # start server (or jome server)
+    jome test # launch the tests
+  </text>
+end

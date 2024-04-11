@@ -7,6 +7,7 @@
   },
   "author": "Pascal Rainville",
   "dependencies": {
+    "express": "^4.19.2",
     "jome.js": "^0.0.6"
   }
 }

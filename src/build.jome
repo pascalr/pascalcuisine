@@ -1,0 +1,9 @@
+with
+  f // aka force // FIXMEEEEEEEE false is not tokenized properly...
+end
+let force = f
+
+//#compile #./js/ex_vanilla.jomm, :force
+//#cp! #./js/ex_vanilla.js, #../docs/js/ex_vanilla.js
+
+#build(#./views/home.html.jome, #../docs/index.html, :force)

@@ -1,0 +1,17 @@
+import * as express from "express"
+
+with {port = 3000} end
+
+//#run('./website-v2/build.jome')
+
+express() chain
+
+  use '/cuisine', express.static('../docs')
+
+  get "/", (req, res) => res.redirect('/cuisine')
+
+  listen(port, do
+    #log("Server listening on port {port}")
+  end)
+
+end

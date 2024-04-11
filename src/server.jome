@@ -6,7 +6,7 @@ with {port = 3000} end
 
 express() chain
 
-  use '/cuisine', express.static('../docs')
+  use '/cuisine', express.static(#../docs)
 
   get "/", (req, res) => res.redirect('/cuisine')
 

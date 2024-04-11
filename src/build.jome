@@ -3,7 +3,6 @@ with
 end
 let force = f
 
-//#compile #./js/ex_vanilla.jomm, :force
-//#cp! #./js/ex_vanilla.js, #../docs/js/ex_vanilla.js
+//#cp! #cwd/css/reset.css, #cwd/docs
 
 #build(#../views/home.html.jome, #../docs/index.html, :force)

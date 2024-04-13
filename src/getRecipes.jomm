@@ -1,0 +1,28 @@
+import { XMLParser } : "fast-xml-parser"
+import fs : "fs"
+
+def toArray(input)
+  if (!input)
+    return []
+  end
+  if Array.isArray(input)
+    return input
+  end
+  return [input];
+  // return Array.isArray(input) ? input : [input];
+end
+
+def getRecipes()
+
+  const data = fs.readFileSync(#../data/recipes_exported.xml, 'utf8');
+
+  const options = {
+    ignoreAttributes: false,
+    attributeNamePrefix : "$",
+    allowBooleanAttributes: true
+  }
+  const parser = new XMLParser(options);
+  return toArray(parser.parse(data).recipe);
+end
+
+main getRecipes

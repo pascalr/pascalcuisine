@@ -1,18 +1,7 @@
-const getRecipeList = require("../data/recipes.js");
+const getRecipes = require("../src/getRecipes.js");
 const { XMLParser } = require("fast-xml-parser");
 const fs = require("fs");
-const path = require("path");
 module.exports = () => {
-  function toArray(input) {
-    if (!input) {
-      return [];
-    }
-    if (Array.isArray(input)) {
-      return input;
-    }
-    return [input];
-  }
-
   // Takes a recipe and prints the HTML to show;
 
   // a summary of the recipe;
@@ -34,21 +23,7 @@ module.exports = () => {
   `;
   }
 
-  let recipeListStr = getRecipeList();
-
-  const data = fs.readFileSync(
-    path.join(__dirname, "../data/recipes_exported.xml"),
-    "utf8",
-  );
-  const options = {
-    ignoreAttributes: false,
-    attributeNamePrefix: "$",
-    allowBooleanAttributes: true,
-  };
-
-  const parser = new XMLParser(options);
-  let recipes = toArray(parser.parse(data).recipe);
-  console.log(recipes);
+  let recipes = getRecipes();
 
   let cards = recipes.map(printRecipeCard).join("\n");
 

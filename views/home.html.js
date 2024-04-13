@@ -1,4 +1,22 @@
 module.exports = () => {
+  // Takes a recipe and prints the HTML to show;
+
+  // a summary of the recipe;
+
+  function printRecipeCard(recipe) {
+    return `
+    <div class="recipe-card">
+      <div class="recipe-card-title">Recipe title</div>
+      <div class="recipe-card-image">Recipe card image</div>
+      <div class="recipe-card-summary" hidden></div>
+    </div>
+  `;
+  }
+
+  let recipes = [1, 2, 3];
+
+  let cards = recipes.map(printRecipeCard).join("\n");
+
   return `
   <html lang="en">
     <head>
@@ -14,13 +32,8 @@ module.exports = () => {
           <input type="text" id="filter" name="filter" placeholder="J'ai faaaaaaaiim... Je veux..." style="margin-left: 1em;">
         </div>
       </nav>
-      <header>
-          <h1>Pascal Cuisine</h1>
-      </header>
-      <div class="container">
-          <!-- Your content goes here -->
-          <h2>Welcome to our website!</h2>
-          <p>This is a basic HTML template.</p>
+      <div>
+        ${cards}
       </div>
     </body>
   </html>`;

@@ -1,3 +1,5 @@
+const j_uid_1 = require("./showRecipe.js");
+const showRecipe = j_uid_1.default;
 const execSh = require("@jome/core/execSh");
 const path = require("path");
 const { build } = require("@jome/core");

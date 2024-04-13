@@ -46,8 +46,6 @@ const parser = new XMLParser(options);
 //let recipes = toArray(parser.parse(recipeListStr).recipe);
 let recipes = toArray(parser.parse(data).recipe);
 
-#log recipes
-
 let cards = recipes.map(printRecipeCard).join('\n')
 
 return <HTML>

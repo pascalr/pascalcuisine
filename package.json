@@ -9,6 +9,7 @@
   "dependencies": {
     "@jome/core": "^0.0.4",
     "express": "^4.19.2",
+    "fast-xml-parser": "^4.3.6",
     "jome.js": "^0.0.6"
   }
 }

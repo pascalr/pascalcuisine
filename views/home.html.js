@@ -1,23 +1,67 @@
+const getRecipeList = require("../data/recipes.js");
+const { XMLParser } = require("fast-xml-parser");
 module.exports = () => {
+  function toArray(input) {
+    if (!input) {
+      return [];
+    }
+    if (Array.isArray(input)) {
+      return input;
+    }
+    return [input];
+  }
+
   // Takes a recipe and prints the HTML to show;
 
   // a summary of the recipe;
 
   function printRecipeCard(recipe) {
+    let title = (recipe && recipe["$name"]) || "Recipe title";
     return `
     <div class="recipe-card">
       <img src="${ROOT}/assets/default_recipe_01.png" width="255" height="171">
-      <div class="recipe-card-title">Recipe title</div>
+      <div class="recipe-card-title">${title}</div>
       <div class="recipe-card-summary" hidden></div>
     </div>
   `;
   }
 
-  let recipes = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-  ];
+  let recipeListStr = getRecipeList();
 
-  let cards = recipes.map(printRecipeCard).join("\n");
+  const options = {
+    ignoreAttributes: false,
+    attributeNamePrefix: "$",
+    allowBooleanAttributes: true,
+  };
+
+  const parser = new XMLParser(options);
+  let recipes = toArray(parser.parse(recipeListStr).recipe);
+  console.log(recipes);
+
+  let cards = [
+    recipes[0],
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+  ]
+    .map(printRecipeCard)
+    .join("\n");
 
   return `
   <html lang="en">

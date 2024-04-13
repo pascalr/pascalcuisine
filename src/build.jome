@@ -1,3 +1,4 @@
+import getRecipes : './getRecipes.jomm'
 import showRecipe from './showRecipe.jomm'
 
 with
@@ -14,3 +15,9 @@ let force = f
 #build(#../css/app.css.jome, #../docs/app.css, :force)
 
 #build(#../views/home.html.jome, #../docs/index.html, :force)
+
+let recipes = getRecipes()
+recipes.forEach(recipe => {
+  let html = showRecipe(recipe)
+  // #write! ()
+})

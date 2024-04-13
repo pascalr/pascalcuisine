@@ -8,6 +8,7 @@ module.exports = () => {
 
 .recipe-card {
   margin: 0.5em;
+  width: 255px;
 }
 
 .recipe-card-title {

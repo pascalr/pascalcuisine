@@ -1,5 +1,7 @@
 const getRecipeList = require("../data/recipes.js");
 const { XMLParser } = require("fast-xml-parser");
+const fs = require("fs");
+const path = require("path");
 module.exports = () => {
   function toArray(input) {
     if (!input) {
@@ -16,10 +18,16 @@ module.exports = () => {
   // a summary of the recipe;
 
   function printRecipeCard(recipe) {
-    let title = (recipe && recipe["$name"]) || "Recipe title";
+    let title = (recipe && (recipe.name || recipe["$name"])) || "Recipe title";
+    let imgSlug = recipe && (recipe.image_slug || recipe["$image_slug"]);
+    if (imgSlug) {
+      imgSlug = `${ROOT}/images/${imgSlug}`;
+    } else {
+      imgSlug = `${ROOT}/assets/default_recipe_01.png`;
+    }
     return `
     <div class="recipe-card">
-      <img src="${ROOT}/assets/default_recipe_01.png" width="255" height="171">
+      <img src="${imgSlug}" width="255" height="171">
       <div class="recipe-card-title">${title}</div>
       <div class="recipe-card-summary" hidden></div>
     </div>
@@ -28,6 +36,10 @@ module.exports = () => {
 
   let recipeListStr = getRecipeList();
 
+  const data = fs.readFileSync(
+    path.join(__dirname, "../data/recipes_exported.xml"),
+    "utf8",
+  );
   const options = {
     ignoreAttributes: false,
     attributeNamePrefix: "$",
@@ -35,33 +47,10 @@ module.exports = () => {
   };
 
   const parser = new XMLParser(options);
-  let recipes = toArray(parser.parse(recipeListStr).recipe);
+  let recipes = toArray(parser.parse(data).recipe);
   console.log(recipes);
 
-  let cards = [
-    recipes[0],
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-  ]
-    .map(printRecipeCard)
-    .join("\n");
+  let cards = recipes.map(printRecipeCard).join("\n");
 
   return `
   <html lang="en">

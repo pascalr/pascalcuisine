@@ -13,7 +13,9 @@ module.exports = () => {
   `;
   }
 
-  let recipes = [1, 2, 3];
+  let recipes = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+  ];
 
   let cards = recipes.map(printRecipeCard).join("\n");
 
@@ -24,6 +26,7 @@ module.exports = () => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Pascal Cuisine</title>
       <link rel="stylesheet" type="text/css" href="${ROOT}/reset.css">
+      <link rel="stylesheet" type="text/css" href="${ROOT}/app.css">
     </head>
     <body>
       <nav style="padding: 0.5em; background-color: #212529; color: #f9f9f9;">
@@ -32,7 +35,7 @@ module.exports = () => {
           <input type="text" id="filter" name="filter" placeholder="J'ai faaaaaaaiim... Je veux..." style="margin-left: 1em;">
         </div>
       </nav>
-      <div>
+      <div style="display: flex; flex-wrap: wrap;">
         ${cards}
       </div>
     </body>

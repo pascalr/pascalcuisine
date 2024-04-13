@@ -1,0 +1,8 @@
+.recipe-card {
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.recipe-card-title {
+  text-align: center;
+}

@@ -4,5 +4,9 @@ end
 let force = f
 
 //#cp! #cwd/css/reset.css, #cwd/docs
+//#cp! #cwd/css/app.css, #cwd/docs
+
+<sh>cp ./css/reset.css ./docs</sh>
+<sh>cp ./css/app.css ./docs</sh>
 
 #build(#../views/home.html.jome, #../docs/index.html, :force)

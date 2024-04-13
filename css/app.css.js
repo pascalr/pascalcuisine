@@ -1,8 +1,9 @@
-
+module.exports = () => {
+  return `
 
 @font-face {
   font-family: 'Satisfy';
-  src: URL('/cuisine/assets/Satisfy-Regular.ttf') format('truetype');
+  src: URL('${ROOT}/assets/Satisfy-Regular.ttf') format('truetype');
 }
 
 .recipe-card {
@@ -18,3 +19,5 @@
 .recipe-card > img {
   transform: translateY(calc(-50% + 85.5px));
 }
+`;
+};

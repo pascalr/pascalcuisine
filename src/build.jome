@@ -6,7 +6,9 @@ let force = f
 //#cp! #cwd/css/reset.css, #cwd/docs
 //#cp! #cwd/css/app.css, #cwd/docs
 
+<sh>rm -R ./docs/assets</sh>
+<sh>cp -R ./public ./docs/assets</sh>
 <sh>cp ./css/reset.css ./docs</sh>
-<sh>cp ./css/app.css ./docs</sh>
+#build(#../css/app.css.jome, #../docs/app.css, :force)
 
 #build(#../views/home.html.jome, #../docs/index.html, :force)

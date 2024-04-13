@@ -6,8 +6,8 @@ module.exports = () => {
   function printRecipeCard(recipe) {
     return `
     <div class="recipe-card">
+      <img src="${ROOT}/assets/default_recipe_01.png" width="255" height="171">
       <div class="recipe-card-title">Recipe title</div>
-      <div class="recipe-card-image">Recipe card image</div>
       <div class="recipe-card-summary" hidden></div>
     </div>
   `;

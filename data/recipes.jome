@@ -1,0 +1,9 @@
+return <list>
+  <recipe
+    name="TODO"
+    prepare="TODO">
+    <ing qty="100 g" food="sugar"/>
+    <ing qty="100 mL" food="water"/>
+    <step>Add @1 into @2. Add @1-2.</step>
+  </recipe>
+</list>

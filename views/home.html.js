@@ -11,7 +11,7 @@ module.exports = () => {
       <nav style="padding: 0.5em; background-color: #212529; color: #f9f9f9;">
         <div style="display: flex;">
           <div style="font-size: 2em;">PascalCuisine</div>
-          <input type="text" id="filter" name="filter" placeholder="J'ai faaaaaaaiim... Je veux...">
+          <input type="text" id="filter" name="filter" placeholder="J'ai faaaaaaaiim... Je veux..." style="margin-left: 1em;">
         </div>
       </nav>
       <header>

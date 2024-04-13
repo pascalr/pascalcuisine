@@ -8,7 +8,6 @@ let force = f
 
 <sh>rm -R ./docs/assets</sh>
 <sh>cp -R ./public ./docs/assets</sh>
-<sh>cp -R ./data/images ./docs/images</sh>
 <sh>cp ./css/reset.css ./docs</sh>
 #build(#../css/app.css.jome, #../docs/app.css, :force)
 

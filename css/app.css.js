@@ -15,6 +15,8 @@ module.exports = () => {
   text-align: center;
   font-size: 1.8em;
   font-family: "Satisfy", cursive;
+  line-height: 1;
+  padding-top: 0.2em;
 }
 
 .recipe-card > img {

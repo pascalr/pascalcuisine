@@ -21,7 +21,7 @@ module.exports = () => {
     let title = (recipe && (recipe.name || recipe["$name"])) || "Recipe title";
     let imgSlug = recipe && (recipe.image_slug || recipe["$image_slug"]);
     if (imgSlug) {
-      imgSlug = `${ROOT}/images/${imgSlug}`;
+      imgSlug = `${ROOT}/images/small/${imgSlug}`;
     } else {
       imgSlug = `${ROOT}/assets/default_recipe_01.png`;
     }
@@ -68,6 +68,8 @@ module.exports = () => {
           <input type="text" id="filter" name="filter" placeholder="J'ai faaaaaaaiim... Je veux..." style="margin-left: 1em;">
         </div>
       </nav>
+      <h2>Recettes</h2>
+      <h2>TODO:</h2>
       <div style="display: flex; flex-wrap: wrap;">
         ${cards}
       </div>

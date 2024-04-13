@@ -8,8 +8,6 @@ module.exports = (f) => {
 
   execSh("cp -R ./public ./docs/assets");
 
-  execSh("cp -R ./data/images ./docs/images");
-
   execSh("cp ./css/reset.css ./docs");
 
   build(

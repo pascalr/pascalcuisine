@@ -10,6 +10,7 @@ let force = f
 //#cp! #cwd/css/app.css, #cwd/docs
 
 <sh>rm -R ./docs/assets</sh>
+<sh>rm -R ./docs/r/*</sh>
 <sh>cp -R ./public ./docs/assets</sh>
 <sh>cp ./css/reset.css ./docs</sh>
 #build(#../css/app.css.jome, #../docs/app.css, :force)
@@ -17,8 +18,13 @@ let force = f
 #build(#../views/home.html.jome, #../docs/index.html, :force)
 
 let recipes = getRecipes()
-// recipes.forEach((recipe) => {
-//   // let html = showRecipe(recipe)
-//   // #write! html, {to: "./docs/r/{recipe.name}"}
-//   // #write! html, to: #../docs/r/{recipe.name}
-// })
+recipes.forEach do |recipe|
+  let html = showRecipe(recipe)
+  let id = recipe.id || recipe['$id']
+  if id
+    <sh>mkdir ./docs/r/<%= id %></sh>
+    // #mkdir! "./docs/r/{id}"
+    #write! html, {to: "./docs/r/{id}/index.html"}
+  end
+  // #write! html, to: #../docs/r/{recipe.name}
+end

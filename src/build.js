@@ -1,6 +1,5 @@
 const getRecipes = require("./getRecipes.js");
-const j_uid_1 = require("./showRecipe.js");
-const showRecipe = j_uid_1.default;
+const showRecipe = require("./showRecipe.js");
 const execSh = require("@jome/core/execSh");
 const path = require("path");
 const { build } = require("@jome/core");
@@ -24,4 +23,6 @@ module.exports = (f) => {
     path.join(__dirname, "../docs/index.html"),
     { force: force },
   );
+
+  let recipes = getRecipes();
 };

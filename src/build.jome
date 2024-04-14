@@ -1,5 +1,5 @@
 import getRecipes : './getRecipes.jomm'
-import showRecipe from './showRecipe.jomm'
+import showRecipe : './showRecipe.jomm'
 
 with
   f // aka force // FIXMEEEEEEEE false is not tokenized properly...
@@ -16,9 +16,9 @@ let force = f
 
 #build(#../views/home.html.jome, #../docs/index.html, :force)
 
-// let recipes = getRecipes()
-// recipes.forEach(recipe => {
-//   let html = showRecipe(recipe)
+let recipes = getRecipes()
+// recipes.forEach((recipe) => {
+//   // let html = showRecipe(recipe)
 //   // #write! html, {to: "./docs/r/{recipe.name}"}
 //   // #write! html, to: #../docs/r/{recipe.name}
 // })

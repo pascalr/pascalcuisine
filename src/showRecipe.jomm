@@ -1,11 +1,11 @@
-main function showRecipe(recipe) {
-  let name = recipe.name || recipe['$name']
+main def showRecipe(recipe)
+  // let name = recipe.name || recipe['$name']
   return <HTML>
     <html lang="fr">
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><%= name %> - Pascal Cuisine</title>
+        <title>Pascal Cuisine</title>
         <link rel="stylesheet" type="text/css" href="<%= ROOT %>/reset.css">
         <link rel="stylesheet" type="text/css" href="<%= ROOT %>/app.css">
       </head>
@@ -19,4 +19,4 @@ main function showRecipe(recipe) {
       </body>
     </html>
   </HTML>
-}
+end

@@ -1,3 +1,4 @@
+const getRecipes = require("./getRecipes.js");
 const j_uid_1 = require("./showRecipe.js");
 const showRecipe = j_uid_1.default;
 const execSh = require("@jome/core/execSh");

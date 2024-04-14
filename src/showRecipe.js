@@ -1,1 +1,21 @@
-module.exports = function showRecipe() {};
+module.exports = function showRecipe(recipe) {
+  return `
+    <html lang="fr">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pascal Cuisine</title>
+        <link rel="stylesheet" type="text/css" href="${ROOT}/reset.css">
+        <link rel="stylesheet" type="text/css" href="${ROOT}/app.css">
+      </head>
+      <body>
+        <nav style="padding: 0.5em; background-color: #212529; color: #f9f9f9;">
+          <div style="display: flex;">
+            <div style="font-size: 2em;">PascalCuisine</div>
+            <input type="text" id="filter" name="filter" placeholder="J'ai faaaaaaaiim... Je veux..." style="margin-left: 1em;">
+          </div>
+        </nav>
+      </body>
+    </html>
+  `;
+};

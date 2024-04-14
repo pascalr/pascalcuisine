@@ -16,8 +16,9 @@ let force = f
 
 #build(#../views/home.html.jome, #../docs/index.html, :force)
 
-let recipes = getRecipes()
-recipes.forEach(recipe => {
-  let html = showRecipe(recipe)
-  // #write! ()
-})
+// let recipes = getRecipes()
+// recipes.forEach(recipe => {
+//   let html = showRecipe(recipe)
+//   // #write! html, {to: "./docs/r/{recipe.name}"}
+//   // #write! html, to: #../docs/r/{recipe.name}
+// })
